@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transform: width 0.1s, height 0.1s ease-in-out;
 }
 html {
   min-width: 100vw;
@@ -23,11 +24,46 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  color: cadetblue;
+  font-weight: bold;
+  font-size: 20vh;
 }
 #sidebar {
   position: fixed;
   z-index: 9;
-  width: 5vw;
+  width: 10vh;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: gray;
+}
+.navigOption {
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vh;
+  position: relative;
+  z-index: 10;
+}
+#selectIndicator {
+  top: 0;
+  background-color: green;
+  margin-top: 0vh;
+  width: 10vh;
+  height: 10vh;
+  position: fixed;
+  z-index: 8;
+  transition: 0.3s linear;
+}
+#selConnC {
+  position: fixed;
+  z-index: 11;
+}
+.navigOptionC {
+  width: 10vh;
+  height: 10vh;
 }

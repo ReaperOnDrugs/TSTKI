@@ -5,12 +5,25 @@
         <meta charset="utf-8">
 
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/init.js"></script>
+        <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
     </head>
-    <body onclick="checkUserAgent()">
-        <div id="blocker"> BLOCKED </div>
+    <body>
+        <div id="blocker"> <span>mobile not supported</span> </div>
         <div id="sidebar">
-
+            <div id="selConn">
+                <div id="selectIndicator"></div>
+                <div id="wel" class="navigOption"><i class="_ignore fab fa-gg-circle"></i></div>
+                <div id="joi" class="navigOption"><i class="_ignore fas fa-sign-in-alt"></i></div>
+                <div id="cre" class="navigOption"><i class="_ignore fas fa-file-medical"></i></div>
+                <div id="inf" class="navigOption"><i class="_ignore fas fa-info"></i></div>
+            </div>
+            <div id="selConnC">
+                <div id="welC" class="navigOptionC _selectedTAB" onclick="setTab('wel')"></div>
+                <div id="creC" class="navigOptionC" onclick="setTab('cre')"></div>
+                <div id="joiC" class="navigOptionC" onclick="setTab('joi')"></div>
+                <div id="infC" class="navigOptionC" onclick="setTab('inf')"></div>
+            </div>
         </div>
     </body>
+    <script src="js/init.js"></script>
 </html>
