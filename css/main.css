@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   transform: width 0.1s, height 0.1s ease-in-out;
+  font-family: "consolas";
 }
 html {
   min-width: 100vw;
@@ -12,7 +13,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: midnightblue;
+  background-color: black;
 }
 #blocker {
   position: fixed;
@@ -37,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: gray;
+  background-color: #1c1c1c;
 }
 .navigOption {
   width: 10vh;
@@ -48,16 +49,17 @@ body {
   font-size: 8vh;
   position: relative;
   z-index: 10;
+  color: #aab1cc;
 }
 #selectIndicator {
   top: 0;
-  background-color: green;
+  background-color: #363636;
   margin-top: 0vh;
   width: 10vh;
   height: 10vh;
   position: fixed;
   z-index: 8;
-  transition: 0.3s linear;
+  transition: top 0.2s, width 0s, height 0s ease-out;
 }
 #selConnC {
   position: fixed;
@@ -66,4 +68,76 @@ body {
 .navigOptionC {
   width: 10vh;
   height: 10vh;
+}
+#welcomeTAB {
+  z-index: 2;
+}
+#joinTAB {
+  z-index: 3;
+}
+#createTAB {
+  z-index: 4;
+}
+#infoTAB {
+  z-index: 5;
+}
+.pageTAB {
+  visibility: collapse;
+  position: fixed;
+  height: 100vh;
+  width: calc(100vw - 10vh);
+  background-color: #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 6vh;
+}
+._selectedTAB {
+  visibility: visible;
+  margin-left: 10vh;
+}
+.slideLeft1 {
+  animation-name: slideLeft1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.slideLeft2 {
+  animation-name: slideLeft2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes slideLeft1 {
+  0% {
+    transform: scale(1);
+    margin-left: 10vh;
+    visibility: visible;
+  }
+  10% {
+    transform: scale(0.8);
+    margin-left: 10vh;
+  }
+  100% {
+    visibility: collapse;
+    margin-left: -100vw;
+    transform: scale(0.8);
+  }
+}
+@keyframes slideLeft2 {
+  0% {
+    transform: scale(0.8);
+    margin-left: 100vw;
+    visibility: collapse;
+  }
+  10% {
+    margin-left: 100vw;
+  }
+  60% {
+    transform: scale(0.8);
+  }
+  100% {
+    visibility: visible;
+    margin-left: 10vh;
+    transform: scale(1);
+  }
 }

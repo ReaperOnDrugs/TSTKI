@@ -15,9 +15,19 @@ tab.forEach((e) => {
     });
 });
 document.getElementById("selConnC").addEventListener("mouseleave", () => {
-    selInd.style.top = document.querySelector("._selectedTAB").offsetTop+"px";
+    selInd.style.top = document.querySelector("._selectedTABi").offsetTop+"px";
 });
-function setTab(str){
-    document.querySelector("._selectedTAB").classList.remove("_selectedTAB");
-    document.getElementById(str+"C").classList.add("_selectedTAB");
+function setTab(str,id){
+    let oldTab = document.querySelector("._selectedTAB");
+    let newTab = document.getElementById(id);
+    document.querySelector("._selectedTABi").classList.remove("_selectedTABi");
+    document.getElementById(str+"C").classList.add("_selectedTABi");
+    oldTab.classList.remove("slideLeft2");
+    oldTab.classList.add("slideLeft1");
+    oldTab.classList.remove("_selectedTAB");
+    newTab.classList.add("_selectedTAB");
+    newTab.classList.add("slideLeft2");
+}
+window.onresize = () => {
+    selInd.style.top = document.querySelector("._selectedTABi").offsetTop+"px";
 }
