@@ -5,6 +5,7 @@
         <meta charset="utf-8">
 
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/lowerElements.css">
         <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
     </head>
     <body>
@@ -12,10 +13,10 @@
         <div id="sidebar">
             <div id="selConn">
                 <div id="selectIndicator"></div>
-                <div id="wel" class="navigOption"><i class="_ignore fab fa-gg-circle"></i></div>
-                <div id="joi" class="navigOption"><i class="_ignore fas fa-sign-in-alt"></i></div>
-                <div id="cre" class="navigOption"><i class="_ignore fas fa-file-medical"></i></div>
-                <div id="inf" class="navigOption"><i class="_ignore fas fa-info"></i></div>
+                <div id="wel" class="navigOption _selectedTABi"><i class="fab fa-gg-circle"></i></div>
+                <div id="joi" class="navigOption"><i class="fas fa-sign-in-alt"></i></div>
+                <div id="cre" class="navigOption"><i class="fas fa-file-medical"></i></div>
+                <div id="inf" class="navigOption"><i class="fas fa-info"></i></div>
             </div>
             <div id="selConnC">
                 <div id="welC" class="navigOptionC _selectedTABi" onclick="setTab('wel','welcomeTAB')"></div>
@@ -27,15 +28,38 @@
         <div id="welcomeTAB" class="pageTAB _selectedTAB">
             Ayy lmao I only spent 8 hours on these transitions
         </div>
-        <div id="joinTAB" class="pageTAB">
+        <div id="joinTAB" class="pageTAB slideLeft1">
             This is the join tab AKA "start quiz here"
         </div>
-        <div id="createTAB" class="pageTAB">
-            You can crete tests/quizes in this tab
+        <div id="createTAB" class="pageTAB slideLeft1">
+            <div id="authBlck">
+                <input id="authName" type="text" placeholder="..your name here.." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <div id="authCBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    CREATE
+                </div>
+            </div>
+            <div id="newTSTelement" class="nTSTcollapse">
+                <!-- Custom dropdown selector goes here -->
+                <!-- Also generate input fields dynamically based on selection  -->
+                <!--  Confirm Button -->
+            </div>
+            <div id="openBtn" onclick="expandNew()"><i class="obCollapse fas fa-plus"></i></div>
+            <div id="delBtn" onclick="deleteCurrentTST()"><i class="fas fa-trash"></i></div>
+            <div id="expBtn" onclick="exportCurrentTST()"><i class="fas fa-download"></i></div>
+            <div id="createCONTENT">
+
+            </div>
         </div>
-        <div id="infoTAB" class="pageTAB">
+        <div id="infoTAB" class="pageTAB slideLeft1">
             Info tab with how to use the site and prob credits
         </div>
     </body>
     <script src="js/init.js"></script>
+    <script type="module" src="js/qManager.js"></script>
+    <script type="module" src="js/tMaster.js"></script>
+    <script type="module" src="js/masterScript.js"></script>
 </html>

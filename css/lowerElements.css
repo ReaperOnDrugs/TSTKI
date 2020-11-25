@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "consolas";
+}
+#newTSTelement {
+  border: 0.5vh solid #aab1cc;
+  position: fixed;
+  background-color: #0e0e0e;
+  z-index: 6;
+  margin-top: 0;
+  padding: 0;
+}
+#openBtn {
+  position: fixed;
+  z-index: 7;
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aab1cc;
+  font-size: 8vh;
+  margin-left: calc(100vw - 20vh);
+  transition: color 0.1s linear;
+}
+#openBtn:hover {
+  color: white;
+  cursor: pointer;
+}
+#openBtn i {
+  transition: 0.2s linear;
+}
+.nTSTcollapse {
+  animation-name: ntstCOLA;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.obCollapse {
+  transform: rotateZ(0deg);
+}
+.obExpand {
+  transform: rotateZ(45deg);
+}
+.nTSTexpand {
+  animation-name: ntstEXPA;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes ntstEXPA {
+  0% {
+    width: 10vh;
+    height: 10vh;
+    margin-left: calc(100vw - 20vh);
+  }
+  100% {
+    width: calc(100vw - 10vh);
+    height: 100vh;
+    margin-left: 0;
+  }
+}
+@keyframes ntstCOLA {
+  0% {
+    width: calc(100vw - 10vh);
+    height: 100vh;
+    margin-left: 0;
+  }
+  100% {
+    width: 10vh;
+    height: 10vh;
+    margin-left: calc(100vw - 20vh);
+  }
+}
+#createCONTENT {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#delBtn,
+#expBtn {
+  position: fixed;
+  z-index: 5;
+  width: 10vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aab1cc;
+  font-size: 8vh;
+  margin-left: calc(100vw - 20vh);
+  transition: color 0.1s linear;
+}
+#delBtn {
+  margin-top: 10vh;
+}
+#expBtn {
+  margin-top: 20vh;
+}
+#delBtn:hover,
+#expBtn:hover,
+#openBtn:hover {
+  color: white;
+}
+#authBlck {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 8;
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s linear;
+}
+#authName {
+  width: 60vw;
+  height: 10vh;
+  border: none;
+  background-color: #1c1c1c;
+  text-align: center;
+  color: #aab1cc;
+  font-size: 8vh;
+  outline-color: #aab1cc;
+  user-select: none;
+}
+#authName::selection {
+  background-color: #a8a8a8;
+  color: white;
+}
+#authCBtn {
+  width: 30vw;
+  height: 10vh;
+  margin-top: 5vh;
+  font-size: 8vh;
+  color: #aab1cc;
+  background-color: #1c1c1c;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.2s linear;
+  outline-color: transparent;
+  user-select: none;
+  text-decoration: none;
+}
+#authCBtn:hover {
+  cursor: pointer;
+  color: white;
+}
+#authCBtn span {
+  display: block;
+  position: absolute;
+  background-color: white;
+}
+#authCBtn span:nth-child(1) {
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0.5vh;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s linear;
+}
+#authCBtn:hover span:nth-child(1) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.2s linear;
+}
+#authCBtn span:nth-child(2) {
+  left: 0;
+  bottom: 0;
+  height: 0.5vh;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s linear;
+}
+#authCBtn:hover span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.2s linear;
+}
+#authCBtn span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0.5vh;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s linear;
+  transition-delay: 0.2s;
+}
+#authCBtn:hover span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.2s linear;
+  transition-delay: 0.2s;
+}
+#authCBtn span:nth-child(4) {
+  left: 0;
+  top: 0;
+  height: 0.5vh;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s linear;
+  transition-delay: 0.2s;
+}
+#authCBtn:hover span:nth-child(4) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.2s linear;
+  transition-delay: 0.2s;
+}

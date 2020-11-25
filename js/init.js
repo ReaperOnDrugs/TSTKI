@@ -20,7 +20,10 @@ document.getElementById("selConnC").addEventListener("mouseleave", () => {
 function setTab(str,id){
     let oldTab = document.querySelector("._selectedTAB");
     let newTab = document.getElementById(id);
-    document.querySelector("._selectedTABi").classList.remove("_selectedTABi");
+    document.querySelectorAll("._selectedTABi").forEach(e => {
+        e.classList.remove("_selectedTABi");
+    });
+    document.getElementById(str).classList.add("_selectedTABi");
     document.getElementById(str+"C").classList.add("_selectedTABi");
     oldTab.classList.remove("slideLeft2");
     oldTab.classList.add("slideLeft1");
@@ -28,6 +31,13 @@ function setTab(str,id){
     newTab.classList.add("_selectedTAB");
     newTab.classList.add("slideLeft2");
 }
+function expandNew(){
+    document.getElementById("newTSTelement").classList.toggle("nTSTcollapse");
+    document.getElementById("newTSTelement").classList.toggle("nTSTexpand");
+    document.getElementById('openBtn').childNodes[0].classList.toggle("obCollapse");
+    document.getElementById('openBtn').childNodes[0].classList.toggle("obExpand");
+}
+
 window.onresize = () => {
     selInd.style.top = document.querySelector("._selectedTABi").offsetTop+"px";
 }

@@ -69,17 +69,29 @@ body {
   width: 10vh;
   height: 10vh;
 }
+._selectedTABi {
+  color: white;
+}
 #welcomeTAB {
-  z-index: 2;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #joinTAB {
-  z-index: 3;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #createTAB {
-  z-index: 4;
+  z-index: 3;
 }
 #infoTAB {
-  z-index: 5;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pageTAB {
   visibility: collapse;
@@ -87,9 +99,6 @@ body {
   height: 100vh;
   width: calc(100vw - 10vh);
   background-color: #0e0e0e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 6vh;
 }
